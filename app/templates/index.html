@@ -1,0 +1,40 @@
+{% include 'navbar.html' %}
+{% import 'macros.html' as macro %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<!-- styles block -->
+
+<!-- content block -->
+{% block content %}
+<body style="background-color: teal; overflow-x: hidden">
+<div class="container" id="index-container">
+    <div class="row ">
+            <div class="col-md-4" style="background-color: black; margin-top: 250px;">
+                    <p style="color: blanchedalmond; text-align: center; margin-top: 60px;">In life, you only have 60 seconds to impress someone. 1 minute can make or break you. 
+                        How do we make sure that you use your 1 minute to actually say something meaningful?</p>
+                    </div>
+        <div class="col-md-4 center" style="margin-top: 360px;">
+            <a href="{{url_for('main.new_pitch')}}" class="btn btn-success">Add Your Pitch</a>
+        </div>
+
+        <div class="col-md-4"style="margin-top: 10px;">
+                    <div class="card text-white bg-dark mb-3" style="margin-top: 250px;">
+                            <h5 class="card-header">Category</h5>
+                            
+                                    <ul class="list-group ">
+                                            <li class="list-group-item"><a href="{{url_for('main.post_pitch')}}" >Innovation</a></li>
+                                            <li  class="list-group-item"><a href="{{url_for('main.post_pitch')}}" >Technology</a></li>
+                                           <li class="list-group-item"> <a href="{{url_for('main.post_pitch')}}" >Photography</a></li>
+                                            <li class="list-group-item"><a href="{{url_for('main.post_pitch')}}" >Poems</a></li>
+                                            <li class="list-group-item"><a href="{{url_for('main.post_pitch')}}" >Film Production</a></li>
+                                    </ul>
+                           
+                            
+                          </div>
+        </div>
+    
+    </div>
+</div>
+</body>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% import 'bootstrap/wtf.html' as wtf%}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+    .card {
+     margin: 0 auto; /* Added */
+     float: none; /* Added */
+     margin-bottom: 10px; /* Added */
+}
+     </style>
+{% block content %}
+<body style="background-color: teal">  
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card text-white bg-dark mb-3"style="width: 50rem; margin-top:40px;">
+        <h5 class="card-header" style="text-align: center">registration form</h5>
+        <div class="card-body">
+                <div class="row">
+                        <div class="col-md-2"> </div>
+                        <div class="col-md-8">
+                        
+                        {{wtf.quick_form(registration_form)}}
+                        
+                        </div>
+                        <div class="col-md-2"></div>
+                        </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card text-white bg-dark mb-3"style="width: 50rem; margin-top:40px;"> 
+        <h5 class="card-header" style="text-align: center">Login Form</h5>
+          <div class="row">
+            <div class= "col-md-2"> </div>
+            <div class="col-md-8">
+            <!--Flash message -->
+            {% for message in get_flashed_messages() %}
+              <div class="alert alert-danger">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              {{ message }}
+              </div>
+            {% endfor %}
+            <!-- Login form -->
+            {{wtf.quick_form(login_form)}}
+           </div>
+           <div clas="col-md-2"> </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</body>
+{% endblock%}

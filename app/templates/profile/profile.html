@@ -1,0 +1,51 @@
+{% include 'navbar.html'%}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+{% block content %}
+<body style="background-color: teal; overflow-x: hidden">
+<div class="container">
+<div class="row">
+<!-- displaying  Username-->
+
+  <div class="col-md-4">
+    
+    <div class="card">
+      <h5 class="card-header">{{user.username| capitalize}}</h5>
+      <div class="card-body">
+        <!--Displaying user bio-->
+    {% if user.bio %}
+    <p> {{user.bio}}</p>
+  {%else%}
+    <p> {{user.username| capitalize}} has no bio </p>
+  {% endif %}
+      </div>
+    </div>
+    
+  </div>
+
+  <!--Display profile photo-->
+  <div class="col-md-4">
+    <div class="card" >
+    {% if user.profile_pic_path %}
+    <img src="{{url_for('static/photos',filename=user.profile_pic_path)}}" alt="" class="img-thumbnail">
+        <div class="card-body">
+         {%else%}
+          <h5 class="card-title">No profile picture</h5>
+          {% endif %}
+          {% if user == current_user %}
+      <form  action="{{url_for('main.update_pic',uname=user.username)}}" method="post" enctype = "multipart/form-data">
+        <input type="file"  name="photo" class="form-control" required>
+        <br>
+        <button type="submit" class="btn btn-primary">Upload</button>
+      </form>
+        {% endif %}
+        </div>
+      </div>
+
+
+
+  </div>
+</div>
+</div>
+</body>
+{% endblock %}

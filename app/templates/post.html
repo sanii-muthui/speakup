@@ -1,0 +1,14 @@
+{% include 'navbar.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+{% block content %}
+<body style="background-color: teal; overflow-x: hidden">
+ 
+    <div class="container">
+        <div class="panel form-panel">
+            {{ wtf.quick_form(pitch_form) }}
+        </div>
+    </div>
+</body>
+{% endblock %}
