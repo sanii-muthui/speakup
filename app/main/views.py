@@ -35,7 +35,6 @@ def new_pitch():
         db.session.commit()
 
          
-    # new_pitch.save_pitch()
         return redirect(url_for('main.post_pitch'))
 
 
