@@ -5,7 +5,7 @@ from ..models import User
 from .forms import LoginForm,RegistrationForm
 from .. import db
 from ..email import mail_message
-
+#joined login and reg together
 
 @auth.route('/login',methods=['GET','POST'])
 def login():
