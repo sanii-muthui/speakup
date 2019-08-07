@@ -60,7 +60,7 @@ As a user you should be able to:
 * Postgressql
 * Heroku for deployment
 
-#contact and support
+# contact and support
 contact me on [saniimuthui](muthuisanii@gmail.com)
 
 ## License
