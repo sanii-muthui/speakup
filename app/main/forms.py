@@ -25,7 +25,3 @@ class UpvoteForm(FlaskForm):
 
 class Downvote(FlaskForm):
 	submit = SubmitField('Submit:)')
-# class CommentForm(FlaskForm):
-#     title = StringField('Comment')
-#     comment = TextAreaField('Enter your comment')
-#     submit = SubmitField('submit')
